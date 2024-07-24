@@ -3,6 +3,7 @@ import { BalanceButton } from "./add_balance_button";
 import { Cards } from "./cards";
 import { GraphContainer } from "./graph_container";
 import { Categories } from "./main_categorie";
+import { Simulate } from "./simulate";
 
 export const MainContainer = () => {
     return (
@@ -15,6 +16,7 @@ export const MainContainer = () => {
             </section>
             <GraphContainer/>
             <Categories/>
+            <Simulate/>
         </main>
     )
 }
