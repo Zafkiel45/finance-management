@@ -1,11 +1,9 @@
-import { HeaderContainer } from "@/app/(components)/(header)/header_container";
-import { MainContainer } from "./(components)/(main)/main_container";
+import { AllElements } from "./providers";
 
 export default function Home() {
   return (
     <>
-      <HeaderContainer/>
-      <MainContainer/>
+      <AllElements/>
     </>
   );
 }
