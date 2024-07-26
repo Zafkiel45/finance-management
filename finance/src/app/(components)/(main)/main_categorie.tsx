@@ -1,6 +1,22 @@
-import PlusSVG from "../../../../public/svg/plus"
+'use client';
+
+import PlusSVG from "../../../../public/svg/plus";
+import { useContext } from "react";
+import { CREATE_SIMPLE_MODAL_CONTEXT } from "@/app/(context)/simple-modal";
+import { SimpleModal } from "./simpleModal";
 
 export const Categories = () => {
+
+    const context = useContext(CREATE_SIMPLE_MODAL_CONTEXT);
+    
+    if(!context) {
+        throw new Error("isto é nulo");
+    };
+
+    function HandleOpenModal() {
+        context?.setStateModal2(() => true);
+    };
+    
     return (
         <section className="w-full flex flex-col gap-5 justify-center px-2 my-10">
             <div className="w-full h-fit">
@@ -18,7 +34,7 @@ export const Categories = () => {
                 </p>
             </div>
             <div className="w-full h-fit">
-                <button className="bg-[#003362] flex gap-2 items-center py-1 px-2 rounded-md text-sm border-2 border-[#205D9E]">
+                <button onClick={() => HandleOpenModal()} className="bg-[#003362] flex gap-2 items-center py-1 px-2 rounded-md text-sm border-2 border-[#205D9E]">
                     <div>
                         <p className="text-[#eee]">
                             Criar categoria
@@ -40,6 +56,13 @@ export const Categories = () => {
                     Ver mais
                 </button>
             </div>
+            <SimpleModal 
+                content="Crie uma categoria"
+                handleFunction={context.setStateModal2}
+                inputType="text"
+                placeholder="Digite o nome da categoria..."
+                state={context.stateModal2}
+            />
         </section>
     )
 }

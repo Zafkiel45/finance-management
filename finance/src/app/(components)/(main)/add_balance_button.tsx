@@ -26,7 +26,7 @@ export const BalanceButton = () => {
             <SimpleModal 
                 content='Adicionar Saldo' 
                 placeholder='Digite o valor do seu saldo...' 
-                inputType='text'
+                inputType='number'
                 handleFunction={SimpleModalContext.setStateModal1}
                 state={SimpleModalContext.stateModal1}
             />
