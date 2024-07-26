@@ -1,6 +1,6 @@
 'use client'
 import PlusSVG from '../../../../public/svg/plus';
-import { SimpleModal } from './simpleModal';
+import { SimpleModal } from '../(modais)/simpleModal';
 import { useContext } from 'react';
 import { CREATE_SIMPLE_MODAL_CONTEXT } from '../../(context)/simple-modal';
 

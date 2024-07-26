@@ -3,7 +3,7 @@
 import PlusSVG from "../../../../public/svg/plus";
 import { useContext } from "react";
 import { CREATE_SIMPLE_MODAL_CONTEXT } from "@/app/(context)/simple-modal";
-import { SimpleModal } from "./simpleModal";
+import { SimpleModal } from "../(modais)/simpleModal";
 
 export const Categories = () => {
 

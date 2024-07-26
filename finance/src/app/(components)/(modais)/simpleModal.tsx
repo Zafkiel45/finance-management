@@ -1,5 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
 import CloseSVG from "../../../../public/svg/close";
+import { HandleCloseModal } from "@/app/(utils)/closeModal";
 
 interface TypeArg {
   content: string;
@@ -18,9 +19,7 @@ export const SimpleModal = ({
 }: TypeArg) => {
   let checkStateOfModal: string = state ? "flex" : "hidden";
 
-  function HandleCloseModal() {
-    handleFunction(() => false);
-  }
+
 
   return (
     <div
@@ -35,7 +34,7 @@ export const SimpleModal = ({
         <div className="w-full h-fit flex justify-between items-center">
           <div>{content}</div>
           <div>
-            <CloseSVG onClick={() => HandleCloseModal()} />
+            <CloseSVG onClick={() => HandleCloseModal(handleFunction)} />
           </div>
         </div>
         {/* input container */}
