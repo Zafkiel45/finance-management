@@ -27,7 +27,7 @@ export const UseIndexedDB = ({
 
                 updateStore.add({
                     saldo: 0,
-                    gastos_mes: 0,
+                    gastos_mes: 200,
                 });
             }
         };
