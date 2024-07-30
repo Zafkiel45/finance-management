@@ -4,8 +4,7 @@ import { useState } from "react";
 import { CREATE_SIMPLE_MODAL_CONTEXT } from "./(context)/simple-modal";
 import { HeaderContainer } from "./(components)/(header)/header_container";
 import { MainContainer } from "./(components)/(main)/main_container";
-import { UseIndexedDB } from "./(hooks)/useIndexedDB";
-import { CARDS_CONTEXT } from "./(context)/cards-context";
+import { TRIGGER_CONTEXT } from "./(context)/trigger";
 
 export const AllElements = () => {
 
@@ -14,8 +13,8 @@ export const AllElements = () => {
   const [stateModal2, setStateModal2] = useState<boolean>(false);
   const [stateModal3, setStateModal3] = useState<boolean>(false);
   const [stateModal4, setStateModal4] = useState<boolean>(false);
-  // Cards Context
-  const [generalView, setGeneralView] = useState<any>(null)
+
+  const [trigger, setTrigger] = useState<boolean>(false);
 
   return (
     <>
@@ -31,15 +30,10 @@ export const AllElements = () => {
           setStateModal4,
         }}
       >
-      <CARDS_CONTEXT.Provider
-        value={{
-          generalView,
-          setGeneralView
-        }}
-      >
-        <HeaderContainer />
-        <MainContainer />
-      </CARDS_CONTEXT.Provider>
+        <TRIGGER_CONTEXT.Provider value={{trigger, setTrigger}}>
+          <HeaderContainer />
+          <MainContainer />
+        </TRIGGER_CONTEXT.Provider>
       </CREATE_SIMPLE_MODAL_CONTEXT.Provider>
     </>
   );

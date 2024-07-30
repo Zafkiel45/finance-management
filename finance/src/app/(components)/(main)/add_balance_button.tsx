@@ -4,7 +4,6 @@ import { SimpleModal } from '../(modais)/simpleModal';
 import { useContext } from 'react';
 import { CREATE_SIMPLE_MODAL_CONTEXT } from '../../(context)/simple-modal';
 
-
 export const BalanceButton = () => {
 
     const SimpleModalContext = useContext(CREATE_SIMPLE_MODAL_CONTEXT);

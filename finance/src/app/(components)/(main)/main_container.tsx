@@ -11,10 +11,13 @@ import { UseIndexedDB } from "@/app/(hooks)/useIndexedDB";
 export const MainContainer = () => {
     
     UseIndexedDB({objectStoreName: 'finances', version: 1});
+
     const DB_VALUES = useRetrieveDB({storeName: 'finances', id: 1});
 
     if(!DB_VALUES) {
-        return <div>Loading...</div>
+        return <div className="w-screen h-screen flex justify-center items-center">
+            Loading...
+        </div>
     }
 
     return (

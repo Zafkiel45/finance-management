@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { TRIGGER_CONTEXT } from "../(context)/trigger";
 
 type DBOpen = IDBOpenDBRequest;
 type DBRequest = IDBRequest;
@@ -14,7 +15,14 @@ interface argsTypes {
 }
 
 export function useRetrieveDB({ storeName, id }: argsTypes) {
+
   const [retrievedValues, setRetrievedValues] = useState<any>(null);
+  // trigger context 
+  const triggerObject = useContext(TRIGGER_CONTEXT);
+
+  if(!triggerObject) {
+    throw new Error("Probemas com o Trigger");
+  }
 
   useEffect(() => {
     const handleRetriveValues = async () => {
@@ -52,7 +60,7 @@ export function useRetrieveDB({ storeName, id }: argsTypes) {
     };
 
     HandleSetValues();
-    }, []);
+    }, [triggerObject.trigger]);
 
     return retrievedValues;
 }
