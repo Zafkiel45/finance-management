@@ -7,6 +7,7 @@ import { Dispatch, SetStateAction } from "react";
 import CloseSVG from "../../../../public/svg/close";
 // util function
 import { HandleCloseModal } from "@/app/(utils)/closeModal";
+import { retrieveStoreToWrite } from "@/app/(utils)/retriveStoreDB";
 // context 
 import { TRIGGER_CONTEXT } from "@/app/(context)/trigger";
 
@@ -39,6 +40,8 @@ export const SimpleModal = ({
   async function HandleDetermineCall() {
       if(inputType === 'number') {
         await HandleUpdateSaldo();
+      } else {
+        await HandleUpdateCategorie();
       }
   }
 
@@ -63,6 +66,7 @@ export const SimpleModal = ({
           NEW_VALUE.onsuccess = () => {
             setInputValue(() => '');
             triggerObject?.setTrigger((e) => !e);
+            HandleCloseModal(handleFunction);
           };
 
           NEW_VALUE.onerror = () => {
@@ -74,6 +78,26 @@ export const SimpleModal = ({
 
     } catch (err) {
       console.error('ocorreu um erro:', err);
+    };
+  }
+
+  async function HandleUpdateCategorie() {
+    const db_promise_store: Promise<IDBObjectStore> = retrieveStoreToWrite(
+      'finances'
+    );
+    const values = await db_promise_store; // Type: IDBObjectStore;
+    const array_categories: IDBRequest<any> = values.get(2);
+
+    array_categories.onsuccess = () => {
+      // array com 1 propriedade categories
+      const result_categories = array_categories.result;
+
+      result_categories.categories.push(inputValue);
+
+      values.put(result_categories);
+      // apaga os valores do input e fecha o modal 
+      setInputValue('');
+      HandleCloseModal(handleFunction);
     };
   }
 

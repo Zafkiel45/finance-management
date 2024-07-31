@@ -29,6 +29,9 @@ export const UseIndexedDB = ({
                     saldo: 0,
                     gastos_mes: 0,
                 });
+                updateStore.add({
+                    categories: [],
+                });
             }
         };
     },[])
