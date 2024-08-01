@@ -92,12 +92,16 @@ export const SimpleModal = ({
       // array com 1 propriedade categories
       const result_categories = array_categories.result;
 
-      result_categories.categories.push(inputValue);
+      result_categories.categories.push({
+        nome: inputValue,
+        gastos: 0,
+      });
 
       values.put(result_categories);
       // apaga os valores do input e fecha o modal 
       setInputValue('');
       HandleCloseModal(handleFunction);
+      triggerObject?.setTrigger((e) => !e);
     };
   }
 

@@ -7,4 +7,4 @@ interface triggerType {
 }
 
 
-    export const TRIGGER_CONTEXT = createContext<triggerType | null>(null);
+export const TRIGGER_CONTEXT = createContext<triggerType | null>(null);
