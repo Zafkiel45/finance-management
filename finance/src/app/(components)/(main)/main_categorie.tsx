@@ -66,7 +66,7 @@ export const Categories = () => {
     };
 
     return (
-        <section className="w-full flex flex-col gap-5 justify-center px-2 my-10">
+        <section className="w-full flex flex-col gap-5 justify-center px-2">
             <div className="w-full h-fit">
                 <h1 className="text-xl font-bold">
                     Categorias
