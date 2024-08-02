@@ -55,12 +55,10 @@ export const Categories = () => {
     }, [TRIGGER?.trigger])
 
     const [itemModalIndex, setItemModalIndex] = useState<number>(0);
-    const [itemModalGastos, setItemModalGastos] = useState<number>(0);
     const [itemModalName, setItemModalName] = useState<string>('');
 
-    function HandleOpenItemModal(index:number, name: string, gastos: number) {
+    function HandleOpenItemModal(index:number, name: string) {
 
-        setItemModalGastos(() => gastos);
         setItemModalIndex(() => index);
         setItemModalName(() => name);
 
@@ -106,7 +104,7 @@ export const Categories = () => {
 
                         if(count_categorie <= 3) {
                             return <div key={index * 2}
-                                onClick={() => HandleOpenItemModal(index, item.nome, item.gastos)}
+                                onClick={() => HandleOpenItemModal(index, item.nome)}
                                 className="w-full h-fit p-3 rounded-lg bg-gray-200 dark:bg-[#1a1a1a]">
                                 {item.nome}
                             </div>
@@ -133,7 +131,7 @@ export const Categories = () => {
                 state={context.stateModal2}
             />
             <CategorieModal/>
-            <CategorieItemModal index={itemModalIndex} gastos={itemModalGastos} categorieName={itemModalName} />
+            <CategorieItemModal index={itemModalIndex} categorieName={itemModalName} />
         </section>
     )
 }

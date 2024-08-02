@@ -2,6 +2,7 @@
 
 // contexts
 import { CATEGORIE_CONTEXT } from "@/app/(context)/categorie_context";
+import { TRIGGER_CONTEXT } from "@/app/(context)/trigger";
 // hooks
 import { useContext, useState, useEffect } from "react";
 // svgs 
@@ -9,18 +10,15 @@ import CloseSVG from "../../../../public/svg/close";
 // utils 
 import { HandleCloseModal } from "@/app/(utils)/closeModal";
 import { retrieveStoreToWrite } from "@/app/(utils)/retriveStoreDB";
-import { TRIGGER_CONTEXT } from "@/app/(context)/trigger";
 // interfaces 
 interface propsTypes {
     index: number;
     categorieName: string;
-    gastos: number;
 }
 
 export const CategorieItemModal = ({
     index,
     categorieName,
-    gastos,
 }: propsTypes) => {
 
     // contexto de gerencimento de estado do modal entre: HIDDEN || FLEX
@@ -30,8 +28,6 @@ export const CategorieItemModal = ({
         throw new Error("Ocorreu um erro ao acessar: CATEGORIE_CONTEXT_ITEM");
     }
     // Recuperação de valores no banco de dados:
-    const TRIGGER = useContext(TRIGGER_CONTEXT);
-
     const [expensesDB, setExpensesDB] = useState<number>();
     const [expenses, setExpenses] = useState<string>('');
 
@@ -67,7 +63,7 @@ export const CategorieItemModal = ({
                         setExpensesDB(db_result.categories[index].gastos);
                     };
 
-                    db_store_values.onerror = (event) => {
+                    db_store_values.onerror = (_event) => {
                         console.error('Erro ao acessar o store:');
                     };
                 } catch (err) {
@@ -79,7 +75,40 @@ export const CategorieItemModal = ({
         }
     }, [CATEGORIE_CONTEXT_ITEM.activeCategorieModalItem, index]);
 
-    console.log(expensesDB)
+    // deletando uma categoria
+
+    const trigger = useContext(TRIGGER_CONTEXT);
+
+    if(!trigger) {
+        throw new Error("Ocorreu um erro com o trigger");
+    };
+
+    
+    async function HandleDeleteCategorie() {
+        try {
+            const db_promise = await retrieveStoreToWrite('finances');
+            const db_values = db_promise.get(2);
+
+            db_values.onsuccess = () => {
+                const db_result = db_values.result;
+
+                const categorie_filtred = db_result.categories.filter((_item: any, idx: number) => {
+                    return index !== idx;
+                });
+
+                db_result.categories = categorie_filtred;
+
+                db_promise.put(db_result);
+            };
+
+            HandleCloseModal(CATEGORIE_CONTEXT_ITEM!.setActiveCategorieModalItem);
+            trigger?.setTrigger((e) => !e);
+        } catch (err) {
+            console.error('ocorreu um erro:', err);
+        }
+    }
+
+
 
     return (
         <div className={`fixed top-0 w-screen h-screen backdrop-blur-sm left-0 justify-center items-center ${CATEGORIE_CONTEXT_ITEM.activeCategorieModalItem ? 'flex':'hidden'} `}>
@@ -114,7 +143,7 @@ export const CategorieItemModal = ({
                         </button>
                     </div>
                     <div>
-                        <button className="bg-red-600 text-white font-medium px-2 py-1 rounded-md border border-red-700">
+                        <button onClick={HandleDeleteCategorie} className="bg-red-600 text-white font-medium px-2 py-1 rounded-md border border-red-700">
                             deletar
                         </button>
                     </div>
