@@ -49,6 +49,7 @@ export const CategorieItemModal = ({
     }
     async function HandleAddExpenses() {
         await HandleAddExpensesToDatabase();
+        trigger?.setTrigger((e) => !e);
     };
 
     useEffect(() => {
@@ -76,14 +77,12 @@ export const CategorieItemModal = ({
     }, [CATEGORIE_CONTEXT_ITEM.activeCategorieModalItem, index]);
 
     // deletando uma categoria
-
     const trigger = useContext(TRIGGER_CONTEXT);
 
     if(!trigger) {
         throw new Error("Ocorreu um erro com o trigger");
     };
 
-    
     async function HandleDeleteCategorie() {
         try {
             const db_promise = await retrieveStoreToWrite('finances');
@@ -107,8 +106,6 @@ export const CategorieItemModal = ({
             console.error('ocorreu um erro:', err);
         }
     }
-
-
 
     return (
         <div className={`fixed top-0 w-screen h-screen backdrop-blur-sm left-0 justify-center items-center ${CATEGORIE_CONTEXT_ITEM.activeCategorieModalItem ? 'flex':'hidden'} `}>
