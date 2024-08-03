@@ -7,6 +7,8 @@ interface CategorieTypes {
     setActiveCategorieModal: Dispatch<SetStateAction<boolean>>;
     activeCategorieModalItem: boolean;
     setActiveCategorieModalItem: Dispatch<SetStateAction<boolean>>;
+    activeCategorieModalItem2: boolean;
+    setActiveCategorieModalItem2: Dispatch<SetStateAction<boolean>>;
 }
 
 

@@ -131,7 +131,7 @@ export const Categories = () => {
                 state={context.stateModal2}
             />
             <CategorieModal/>
-            <CategorieItemModal index={itemModalIndex} categorieName={itemModalName} />
+            <CategorieItemModal handleClose={CATEGORIE_MODAL_CONTEXT.setActiveCategorieModalItem} visible={CATEGORIE_MODAL_CONTEXT.activeCategorieModalItem} index={itemModalIndex} categorieName={itemModalName} />
         </section>
     )
 }

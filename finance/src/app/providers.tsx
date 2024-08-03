@@ -19,6 +19,7 @@ export const AllElements = () => {
   // categorie context
   const [activeCategorieModal, setActiveCategorieModal] = useState<boolean>(false); 
   const [activeCategorieModalItem, setActiveCategorieModalItem] = useState<boolean>(false); 
+  const [activeCategorieModalItem2, setActiveCategorieModalItem2] = useState<boolean>(false); 
 
   return (
     <>
@@ -40,6 +41,8 @@ export const AllElements = () => {
             activeCategorieModal,
             activeCategorieModalItem,
             setActiveCategorieModalItem,
+            activeCategorieModalItem2,
+            setActiveCategorieModalItem2
           }}>
             <HeaderContainer />
             <MainContainer />

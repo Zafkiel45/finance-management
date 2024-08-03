@@ -1,32 +1,68 @@
 "use client";
 
 import { CATEGORIE_CONTEXT } from "@/app/(context)/categorie_context";
-import { useContext } from "react";
+import { useContext, useState, useEffect} from "react";
 import { useRetrieveDB } from "@/app/(hooks)/useRetrieveData";
 import CloseSVG from "../../../../public/svg/close";
+import { CategorieItemModal } from "./categorie_modal_item";
 import { HandleCloseModal } from "@/app/(utils)/closeModal";
+import { TRIGGER_CONTEXT } from "@/app/(context)/trigger";
+import { retrieveStoreToWrite } from "@/app/(utils)/retriveStoreDB";
+
 
 export const CategorieModal = () => {
-  const db_values = useRetrieveDB({ storeName: "finances", id: 2 });
+  
+  const [categories, setCategories] = useState<any>();
+  const TRIGGER = useContext(TRIGGER_CONTEXT);
+  const CATEGORIE_MODAL_CONTEXT = useContext(CATEGORIE_CONTEXT);
 
-  const categorie_context = useContext(CATEGORIE_CONTEXT);
-
-  if (!categorie_context) {
-    throw new Error("Ocorreu um erro ao abrir o categorie context");
+  if(!CATEGORIE_MODAL_CONTEXT) {
+      throw new Error("OCORREU UM ERRO CO CATEOGORIE MODAL CONTEXT");
   }
+  
+  async function HandleSetCategories() {
+      try {
+          const db_promise = await retrieveStoreToWrite('finances');
+          const db_item: IDBRequest = db_promise.get(2);
+          
+          db_item.onsuccess = () => {
+              const db_result = db_item.result;
+              setCategories(db_result.categories);
+          }
 
-  if (!db_values) {
-    return (
-      <div className="w-screen h-screen flex justify-center items-center">
-        Carregando categorias...
-      </div>
-    );
-  }
+      } catch (err) {
+          console.error(`ocorreu um erro: ${err}`);
+      }
+  };
+
+  useEffect(() => {
+      const callCategorie = async () => {
+          await HandleSetCategories();
+      };
+
+      callCategorie();
+  }, [TRIGGER?.trigger])
+
+  
+  const [itemModal, setItemModal] = useState<any>([{
+    name: '',
+    index: 0,
+  }]);
+
+  function HandleOpenItemModal(item: any) {
+
+      setItemModal((element:any) =>  [{...element, index: item.index, name: item.name}])
+      CATEGORIE_MODAL_CONTEXT?.setActiveCategorieModalItem2(true);
+      TRIGGER?.setTrigger(e => !e);
+
+  };
+
+  console.log(itemModal[0].index)
 
   return (
     <div
       className={`fixed top-0 left-0 w-screen h-screen bg-white dark:bg-[#111111] ${
-        categorie_context.activeCategorieModal ? "flex" : "hidden"
+        CATEGORIE_MODAL_CONTEXT.activeCategorieModal ? "flex" : "hidden"
       } justify-center items-center`}
     >
       {/* {acima overlay} */}
@@ -37,18 +73,18 @@ export const CategorieModal = () => {
           <div>
             <CloseSVG
               onClick={() =>
-                HandleCloseModal(categorie_context.setActiveCategorieModal)
+                HandleCloseModal(CATEGORIE_MODAL_CONTEXT.setActiveCategorieModal)
               }
             />
           </div>
         </div>
         <div className="overflow-auto">
           <div className="flex flex-col gap-3 justify-center ">
-            {db_values ? (
+            {categories ? (
               <>
-                {db_values.categories.map((item: any, index: number) => {
+                {categories.map((item: any, index: number) => {
                   return (
-                    <div className="bg-gray-200 dark:bg-[#1a1a1a] rounded-md p-3" key={index * 2}>
+                    <div onClick={() => HandleOpenItemModal({index: index, name: item.nome})} className="bg-gray-200 dark:bg-[#1a1a1a] rounded-md p-3" key={index * 2}>
                       {item.nome}
                     </div>
                   );
@@ -63,6 +99,7 @@ export const CategorieModal = () => {
           </div>
         </div>
       </div>
+        <CategorieItemModal handleClose={CATEGORIE_MODAL_CONTEXT.setActiveCategorieModalItem2} visible={CATEGORIE_MODAL_CONTEXT.activeCategorieModalItem2} key={`${itemModal[0].index}-${itemModal[0].name}`} categorieName={itemModal[0].name} index={itemModal[0].index} />
     </div>
   );
 };
