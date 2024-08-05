@@ -1,6 +1,6 @@
 export const Simulate = () => {
     return (
-        <section className="px-2 my-5 w-full h-fit flex flex-col gap-4 justify-center">
+        <section className="px-2  w-full h-fit flex flex-col gap-4 justify-center">
             <div className="w-full h-fit">
                 <h1 className="font-bold text-xl">
                     Simulações

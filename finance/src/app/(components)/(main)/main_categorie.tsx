@@ -105,7 +105,7 @@ export const Categories = () => {
                         if(count_categorie <= 3) {
                             return <div key={index * 2}
                                 onClick={() => HandleOpenItemModal(index, item.nome)}
-                                className="w-full h-fit p-3 rounded-lg bg-gray-200 dark:bg-[#1a1a1a]">
+                                className="w-full text-[#212121] border-2 cursor-pointer dark:border-gray-600 border-gray-400 dark:text-[#eeee] h-fit p-3 rounded-lg bg-gray-200 dark:bg-[#1a1a1a]">
                                 {item.nome}
                             </div>
                         }

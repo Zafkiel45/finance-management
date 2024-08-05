@@ -84,7 +84,7 @@ export const CategorieModal = () => {
               <>
                 {categories.map((item: any, index: number) => {
                   return (
-                    <div onClick={() => HandleOpenItemModal({index: index, name: item.nome})} className="bg-gray-200 dark:bg-[#1a1a1a] rounded-md p-3" key={index * 2}>
+                    <div onClick={() => HandleOpenItemModal({index: index, name: item.nome})} className="w-full text-[#212121] border-2 cursor-pointer dark:border-gray-600 border-gray-400 dark:text-[#eeee] h-fit p-3 rounded-lg bg-gray-200 dark:bg-[#1a1a1a]" key={index * 2}>
                       {item.nome}
                     </div>
                   );
