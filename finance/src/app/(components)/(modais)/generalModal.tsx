@@ -27,7 +27,7 @@ export const GeneralModal = ({
 }: TypeArg) => {
 
     const db_value = useRetrieveDB({storeName: 'finances', id: 1});
-    const [expenseCategorie, setExpenseCategorie] = useState<any>();
+    const [expenseCategorie, setExpenseCategorie] = useState<any>([]);
 
     const trigger = useContext(TRIGGER_CONTEXT);
 
@@ -55,12 +55,12 @@ export const GeneralModal = ({
     }, [trigger?.trigger])
 
     const stateModal = state ? 'flex':'hidden';
-
+    
     if(!db_value || !expenseCategorie) {
         return <div>Loading general data...</div>
     };
 
-    console.log(expenseCategorie)
+    const check = expenseCategorie.length !== 0 ? expenseCategorie[expenseCategorie.length -1].nome: '';
 
     return (
         <div className={`${stateModal} z-20 fixed dark:bg-[#111111] overflow-auto bg-white top-0 left-0 w-screen h-fit px-4 py-5 flex justify-center items-center`}>
@@ -80,7 +80,7 @@ export const GeneralModal = ({
                     <div className="w-full h-fit flex flex-col justify-center gap-2">
                         <Cards content="Saldo" value={db_value.saldo} />
                         <Cards  content="Gastos totais" value={db_value.gastos_mes}/>
-                        <Cards content="Categoria com mais despesas" value={0} categorieName={expenseCategorie[expenseCategorie.length -1].nome} />
+                        <Cards content="Categoria com mais despesas" value={0} categorieName={check} />
                     </div>
                     <div className="w-full h-fit">
                         <GraphContainer/>
