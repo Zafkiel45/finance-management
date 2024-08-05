@@ -51,12 +51,12 @@ export const GraphContainer = () => {
     }, [trigger.trigger])
 
     return (
-        <section className="px-2 relative my-5 w-full">
+        <section className="px-2 py-7 relative my-5 w-full">
             <Bar data={{
                 labels: labels,
                 datasets: [{
                     data: dataValues,
-                    label: 'votos',
+                    label: 'gastos',
                     backgroundColor: "blue",
                     borderWidth: 1
                 }],  

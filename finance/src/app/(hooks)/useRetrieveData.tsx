@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useContext } from "react";
 import { TRIGGER_CONTEXT } from "../(context)/trigger";
+import { UseIndexedDB } from "./useIndexedDB";
 
 type DBOpen = IDBOpenDBRequest;
 type DBRequest = IDBRequest;
@@ -16,6 +17,7 @@ interface argsTypes {
 
 export function useRetrieveDB({ storeName, id }: argsTypes) {
 
+  UseIndexedDB({objectStoreName: 'finances', version: 1})
   const [retrievedValues, setRetrievedValues] = useState<any>(null);
   // trigger context 
   const triggerObject = useContext(TRIGGER_CONTEXT);

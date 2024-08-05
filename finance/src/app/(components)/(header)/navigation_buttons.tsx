@@ -7,7 +7,7 @@ export const NavigationButtons = ({
     function HandleModalOpen() {
         if(HandleOpenModal) {
            HandleOpenModal(() => true);
-           document.body.style.overflowY = 'hidden'
+           document.body.style.overflowY = 'hidden';
         };   
     };
 
