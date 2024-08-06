@@ -37,7 +37,7 @@ export const Simulate = () => {
                         do quanto irá gastar, e do quanto irá restar de saldo.
                         <br />
                         <br />
-                        Quando clicar no botão "simular", o valor do item será
+                        Quando clicar no botão &quot;simular&quot;, o valor do item será
                         subtraido do saldo e somado aos gastos e mostra para 
                         você quanto resta e os gastos totais (com o valor do item somado).
                     </p>

@@ -94,7 +94,7 @@ export const CategorieModal = () => {
             ) : (
               <>
                 Parece que você não tem categorias... Tente criar algumas na
-                página inicial, em "Categorias".
+                página inicial, em &quot;Categorias&quot;.
               </>
             )}
           </div>

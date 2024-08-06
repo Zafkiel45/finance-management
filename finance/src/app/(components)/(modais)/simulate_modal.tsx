@@ -42,7 +42,7 @@ export const SimulateModal = () => {
         }
 
         db_values();
-    },[trigger?.trigger]);
+    },[trigger?.trigger, itemValue]);
 
     function HandleSimulate() {
         trigger?.setTrigger(e => !e);

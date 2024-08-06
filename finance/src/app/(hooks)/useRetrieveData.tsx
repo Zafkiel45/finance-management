@@ -62,7 +62,7 @@ export function useRetrieveDB({ storeName, id }: argsTypes) {
     };
 
     HandleSetValues();
-    }, [triggerObject.trigger]);
+    }, [triggerObject.trigger, id, storeName]);
 
     return retrievedValues;
 }

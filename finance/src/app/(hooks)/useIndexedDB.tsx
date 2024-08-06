@@ -34,5 +34,5 @@ export const UseIndexedDB = ({
                 });
             }
         };
-    },[])
+    },[objectStoreName, version])
 }

@@ -72,7 +72,7 @@ export const CategorieItemModal = ({ index, categorieName, visible, handleClose 
 
       db_set_expenses();
     }
-  }, [CATEGORIE_CONTEXT_ITEM.activeCategorieModalItem, index]);
+  }, [CATEGORIE_CONTEXT_ITEM.activeCategorieModalItem, index, visible]);
 
   // deletando uma categoria
   const trigger = useContext(TRIGGER_CONTEXT);
