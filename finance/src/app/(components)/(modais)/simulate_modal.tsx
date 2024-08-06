@@ -65,9 +65,9 @@ export const SimulateModal = () => {
     return (
         <div className={`${simulateContext.simulateVisible ? 'flex':'hidden'} fixed top-0 left-0 w-screen h-screen backdrop-blur-sm justify-center items-center z-10`}>
             {/* overlay acima */}
-            <div className={`w-fit h-fit p-4 flex border-2 border-gray-400 dark:border-gray-700 bg-white dark:bg-[#111111] rounded-md flex-col justify-center gap-3`}>
+            <div className={`w-fit tabletMini:w-4/6 mobileMedium:w-5/6 h-fit p-4 flex border-2 border-gray-400 dark:border-gray-700 bg-white dark:bg-[#111111] rounded-md flex-col justify-center gap-3`}>
                 <div className="w-full h-fit flex justify-between">
-                    <div>
+                    <div className="mobileMedium:text-lg">
                         Simulação
                     </div>
                     <div>
@@ -76,10 +76,10 @@ export const SimulateModal = () => {
                 </div>
                 <div className="flex flex-col gap-2">
                     <div>
-                        <input value={itemName} onChange={(e) => setItemName(e.target.value)} className={`border border-gray-400 rounded-md dark:border-gray-700 px-2 py-1 placeholder:text-sm placeholder:text-gray-400 bg-white dark:bg-[#27272711]`}  type="text" placeholder="Digite o nome do item..."/>
+                        <input value={itemName} onChange={(e) => setItemName(e.target.value)} className={`mobileMedium:w-full mobileMedium:px-3 mobileMedium:py-2 border border-gray-400 rounded-md dark:border-gray-700 px-2 py-1 placeholder:text-sm placeholder:text-gray-400 bg-white dark:bg-[#27272711]`}  type="text" placeholder="Digite o nome do item..."/>
                     </div>
                     <div>
-                        <input value={itemValue} onChange={(e) => setItemValue(e.target.value)} className={`border border-gray-400 rounded-md dark:border-gray-700 px-2 py-1 placeholder:text-sm placeholder:text-gray-400 bg-white dark:bg-[#27272711]`}  type="number" placeholder="Digite o valor do item..."/>
+                        <input value={itemValue} onChange={(e) => setItemValue(e.target.value)} className={`mobileMedium:w-full mobileMedium:px-3 mobileMedium:py-2 border border-gray-400 rounded-md dark:border-gray-700 px-2 py-1 placeholder:text-sm placeholder:text-gray-400 bg-white dark:bg-[#27272711]`}  type="number" placeholder="Digite o valor do item..."/>
                     </div>
                 </div>
                 <div className={`${tableVisible ? 'block':'hidden'}`}>
@@ -111,7 +111,7 @@ export const SimulateModal = () => {
                     </table>
                 </div>
                 <div className="w-full h-fit flex justify-end">
-                    <button onClick={HandleSimulate} className="bg-[#003362] text-[#eee] py-1 px-2 rounded-md text-sm border-2 border-[#205D9E]">
+                    <button onClick={HandleSimulate} className="bg-[#003362] text-[#eee] py-1 px-2 mobileMedium:px-2 mobileMedium:py-2 rounded-md  text-sm border-2 border-[#205D9E]">
                         Simular
                     </button>
                 </div>

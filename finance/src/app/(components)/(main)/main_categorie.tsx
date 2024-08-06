@@ -66,14 +66,14 @@ export const Categories = () => {
     };
 
     return (
-        <section className="w-full flex flex-col gap-5 justify-center px-2">
+        <section className="w-full flex flex-col tabletMini:px-4 gap-5 justify-center px-2">
             <div className="w-full h-fit">
-                <h1 className="text-xl font-bold">
+                <h1 className="text-xl tabletMini:text-2xl font-bold">
                     Categorias
                 </h1>
             </div>
             <div className="w-full h-fit">
-                <p className="text-base text-justify">
+                <p className="text-base text-justify tabletMini:text-lg">
                     Está é a área de categorias. Aqui você pode separar seus 
                     gastos com base nelas. Por exemplo, crie uma categoria 
                     para “entretenimento” e registre a quantidade de gastos 
@@ -82,14 +82,14 @@ export const Categories = () => {
                 </p>
             </div>
             <div className="w-full h-fit">
-                <button onClick={() => HandleOpenModal()} className="bg-[#003362] flex gap-2 items-center py-1 px-2 rounded-md text-sm border-2 border-[#205D9E]">
+                <button onClick={() => HandleOpenModal()} className="bg-[#003362] flex gap-2 tabletMini:px-3 tabletMini:py-2 items-center py-1 px-2 rounded-md text-sm border-2 border-[#205D9E]">
                     <div>
                         <p className="text-[#eee]">
                             Criar categoria
                         </p>
                     </div>
                     <div>
-                        <PlusSVG className="fill-[#eee]" />
+                        <PlusSVG className="fill-[#eee] tabletMini:w-5 tabletMini:h-5" />
                     </div>
                 </button>
             </div>
@@ -119,7 +119,7 @@ export const Categories = () => {
                )}
             </div>
             <div className="mt-5 w-full h-fit flex justify-center items-center">
-                <button onClick={() => CATEGORIE_MODAL_CONTEXT.setActiveCategorieModal(true)} className="bg-[#003362] text-[#eee] py-1 px-2 rounded-md text-sm border-2 border-[#205D9E]" >
+                <button onClick={() => CATEGORIE_MODAL_CONTEXT.setActiveCategorieModal(true)} className="bg-[#003362] text-[#eee] py-1 px-2 rounded-md text-sm tabletMini:text-base tabletMini:px-3 border-2 border-[#205D9E]" >
                     Ver mais
                 </button>
             </div>

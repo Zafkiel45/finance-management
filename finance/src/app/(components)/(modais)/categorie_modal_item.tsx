@@ -115,10 +115,10 @@ export const CategorieItemModal = ({ index, categorieName, visible, handleClose 
     >
       {/* {Acima overlay} */}
       {/* {Abaixo modal} */}
-      <div className="w-fit min-w-72 h-fit p-5 border-2 border-gray-300 rounded-md bg-white dark:bg-[#1a1a1a] flex flex-col gap-4">
+      <div className="w-fit mobileMedium:w-5/6 tabletMini:w-4/6 min-w-72 h-fit p-5 border-2 border-gray-300 rounded-md bg-white dark:bg-[#1a1a1a] flex flex-col gap-4">
         {/* {Header do modal} */}
         <div className="w-full h-fit flex justify-between items-center">
-          <div className="text-lg font-bold">Categoria: {categorieName}</div>
+          <div className="text-lg font-bold mobileMedium:text-lg">Categoria: {categorieName}</div>
           <div className="ml-2">
             <CloseSVG
               onClick={() =>
@@ -138,7 +138,7 @@ export const CategorieItemModal = ({ index, categorieName, visible, handleClose 
             value={expenses}
             onChange={(e) => setExpenses(e.target.value)}
             type="text"
-            className="border-2 border-gray-300 rounded-md px-2 py-1 placeholder:text-sm text-gray-400"
+            className="mobileMedium:w-full mobileMedium:py-2 mobileMedium:px-3  border-2 border-gray-300 rounded-md px-2 py-1 placeholder:text-sm text-gray-400"
             placeholder="Adicione um valor para gastos..."
           />
         </div>

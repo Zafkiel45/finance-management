@@ -51,8 +51,8 @@ export const GraphContainer = () => {
     }, [trigger.trigger])
 
     return (
-        <section className="px-2 py-7 relative w-full">
-            <Bar data={{
+        <section className="px-2 py-7 tabletMini:px-4 relative w-full">
+            <Bar height={200} role="img" aria-label="gráfico" data={{
                 labels: labels,
                 datasets: [{
                     data: dataValues,

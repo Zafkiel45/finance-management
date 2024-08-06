@@ -69,7 +69,7 @@ export const CategorieModal = () => {
       {/* {abaixo modal } */}
       <div className="w-full h-full flex flex-col gap-4 p-3">
         <div className="flex justify-between items-center">
-          <div>Todas as categorias</div>
+          <div className="mobileMini:text-lg">Todas as categorias</div>
           <div>
             <CloseSVG
               onClick={() =>

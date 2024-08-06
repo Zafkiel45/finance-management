@@ -14,7 +14,6 @@ export const SwitchButton = () => {
 
         document.body.classList.remove('dark');
     };
-
     function HandleAddDarkTheme() {
         localStorage.financeTheme = 'dark';
         document.body.classList.add('dark');
@@ -22,7 +21,6 @@ export const SwitchButton = () => {
       
         document.body.classList.remove('light');
     };
-
     useEffect(() => {
         const matchTheme: boolean = 
             matchMedia('(prefers-color-theme: dark)').matches;
@@ -33,7 +31,6 @@ export const SwitchButton = () => {
             HandleAddLightTheme();
         };
     }, []);
-
     function HandleSwitchMode() {
         if(localStorage.financeTheme) {
             const matchTheme: string = localStorage.financeTheme; 
@@ -52,9 +49,9 @@ export const SwitchButton = () => {
     return (
         <button onClick={HandleSwitchMode} className="border group border-[#414141] p-2 rounded-md hover:bg-gray-700 transition-all">
             {theme === 'dark' ? 
-                <MoonSVG className="fill-[#eeeeee]" />
+                <MoonSVG className="fill-[#eeeeee] mobileMini:h-5 mobileMini:w-5" />
                 :
-                <SunSVG className="fill-[#414141] group-hover:fill-[#eeeeee]"/>
+                <SunSVG className="fill-[#414141] mobileMini:h-5 mobileMini:w-5 group-hover:fill-[#eeeeee]"/>
             }
         </button>
     )

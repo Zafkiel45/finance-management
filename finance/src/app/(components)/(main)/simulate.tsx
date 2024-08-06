@@ -24,7 +24,7 @@ export const Simulate = () => {
                 </h1>
             </div>
             <div className="w-full h-fit">
-                <p className="text-justify">
+                <p className="text-justify tabletMini:text-lg">
                     Simule transações antes de efetuar a compra de algo e 
                     visualize quanto de saldo irá restar após  a transação. 
                 </p>
@@ -32,7 +32,7 @@ export const Simulate = () => {
             <div className="w-full h-fit">
                 <details>
                     <summary className="font-bold">Explicação completa</summary>
-                    <p className="mt-3 text-sm"> 
+                    <p className="mt-3 text-sm mobileMini:text-base"> 
                         O intuito da simulação, é para que você tenha uma noção 
                         do quanto irá gastar, e do quanto irá restar de saldo.
                         <br />
@@ -44,7 +44,7 @@ export const Simulate = () => {
                 </details>
             </div>
             <div>
-                <button onClick={HandleOpenSimulateModal} className="bg-[#003362] text-[#eee] py-1 px-2 rounded-md text-sm border-2 border-[#205D9E]" >
+                <button onClick={HandleOpenSimulateModal} className="bg-[#003362] text-[#eee] py-1 px-2 rounded-md tabletMini:text-base tabletMini:px-3 text-sm border-2 border-[#205D9E]" >
                     Simular
                 </button>
             </div>

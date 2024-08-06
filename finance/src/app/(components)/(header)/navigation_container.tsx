@@ -17,7 +17,7 @@ export const NavigationContainer = () => {
 
     return (
         <nav className="w-full">
-            <ol className="flex justify-end items-center flex-row gap-2 w-full">
+            <ol className="flex justify-end items-center flex-row gap-2 mobileMini:gap-4 w-full">
                 <li className="">
                     <NavigationButtons HandleOpenModal={context?.setStateModal3} content="Visão Geral" />
                 </li>
