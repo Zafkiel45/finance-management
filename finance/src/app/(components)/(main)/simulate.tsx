@@ -1,4 +1,21 @@
+'use client';
+
+import { useContext } from "react";
+import { SIMULATE_CONTEXT } from "@/app/(context)/simulate_context";
+import { SimulateModal } from "../(modais)/simulate_modal";
+
 export const Simulate = () => {
+
+    const simulate = useContext(SIMULATE_CONTEXT);
+
+    if(!simulate) {
+        throw new Error("Ops...Ocorreu um erro com simulate");
+    }
+
+    function HandleOpenSimulateModal():void {
+        simulate?.setSimulateVisible(true);
+    };
+
     return (
         <section className="px-2  w-full h-fit flex flex-col gap-4 justify-center">
             <div className="w-full h-fit">
@@ -14,15 +31,24 @@ export const Simulate = () => {
             </div>
             <div className="w-full h-fit">
                 <details>
-                    <summary>Explicação completa</summary>
-                    <p> Este é um texto escondido</p>
+                    <summary className="font-bold">Explicação completa</summary>
+                    <p className="mt-3 text-sm"> 
+                        O intuito da simulação, é para que você tenha uma noção 
+                        do quando irá gastar, e do quanto irá restar de saldo.
+                        <br />
+                        <br />
+                        Quando clicar no botão "simular", o valor do item será
+                        subtraido do saldo e somado aos gastos e mostra para 
+                        você quanto resta e os gastos totais (com o valor do item somado).
+                    </p>
                 </details>
             </div>
             <div>
-                <button className="bg-[#003362] text-[#eee] py-1 px-2 rounded-md text-sm border-2 border-[#205D9E]" >
+                <button onClick={HandleOpenSimulateModal} className="bg-[#003362] text-[#eee] py-1 px-2 rounded-md text-sm border-2 border-[#205D9E]" >
                     Simular
                 </button>
             </div>
+            <SimulateModal/>
         </section>
     )
 }
