@@ -73,7 +73,7 @@ export const Categories = () => {
                 </h1>
             </div>
             <div className="w-full h-fit">
-                <p className="text-base text-justify tabletMini:text-lg">
+                <p className="text-base text-justify tabletMini:text-lg destkopMini:text-xl destkopMini:leading-7">
                     Está é a área de categorias. Aqui você pode separar seus 
                     gastos com base nelas. Por exemplo, crie uma categoria 
                     para “entretenimento” e registre a quantidade de gastos 
@@ -82,7 +82,7 @@ export const Categories = () => {
                 </p>
             </div>
             <div className="w-full h-fit">
-                <button onClick={() => HandleOpenModal()} className="bg-[#003362] flex gap-2 tabletMini:px-3 tabletMini:py-2 items-center py-1 px-2 rounded-md text-sm border-2 border-[#205D9E]">
+                <button onClick={() => HandleOpenModal()} className="bg-[#003362] flex gap-2 tabletMini:px-3 tabletMini:py-2 items-center py-1 px-2 rounded-md text-sm destkopMini:text-base border-2 border-[#205D9E]">
                     <div>
                         <p className="text-[#eee]">
                             Criar categoria
@@ -105,7 +105,7 @@ export const Categories = () => {
                         if(count_categorie <= 3) {
                             return <div key={index * 2}
                                 onClick={() => HandleOpenItemModal(index, item.nome)}
-                                className="w-full text-[#212121] border-2 cursor-pointer dark:border-gray-600 border-gray-400 dark:text-[#eeee] h-fit p-3 rounded-lg bg-gray-200 dark:bg-[#1a1a1a]">
+                                className="w-full text-[#212121] border-2 cursor-pointer dark:border-gray-600 border-gray-400 dark:text-[#eeee] h-fit p-3 rounded-lg bg-gray-200 dark:bg-[#1a1a1a] destkopMini:text-lg destkopMini:p-4">
                                 {item.nome}
                             </div>
                         }

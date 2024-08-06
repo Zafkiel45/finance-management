@@ -19,20 +19,20 @@ export const Simulate = () => {
     return (
         <section className="px-2  w-full h-fit flex flex-col gap-4 justify-center">
             <div className="w-full h-fit">
-                <h1 className="font-bold text-xl">
+                <h1 className="font-bold text-xl destkopMini:text-2xl">
                     Simulações
                 </h1>
             </div>
             <div className="w-full h-fit">
-                <p className="text-justify tabletMini:text-lg">
+                <p className="text-justify tabletMini:text-lg destkopMini:text-xl">
                     Simule transações antes de efetuar a compra de algo e 
                     visualize quanto de saldo irá restar após  a transação. 
                 </p>
             </div>
             <div className="w-full h-fit">
                 <details>
-                    <summary className="font-bold">Explicação completa</summary>
-                    <p className="mt-3 text-sm mobileMini:text-base"> 
+                    <summary className="font-bold destkopMini:text-xl">Explicação completa</summary>
+                    <p className="mt-3 text-sm mobileMini:text-base destkopMini:text-lg"> 
                         O intuito da simulação, é para que você tenha uma noção 
                         do quanto irá gastar, e do quanto irá restar de saldo.
                         <br />

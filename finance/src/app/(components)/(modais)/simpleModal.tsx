@@ -118,13 +118,13 @@ export const SimpleModal = ({
       {/* overlay acima*/}
       {/* Modal abaixo*/}
       <div
-        className={`bg-white dark:bg-[#111111] border border-[#414141] shadow-sm rounded-lg gap-5 flex flex-col justify-center w-fit h-fit py-3 mobileMedium:w-5/6 tabletMini:w-4/6 px-5`}
+        className={`bg-white dark:bg-[#111111] border border-[#414141] shadow-sm rounded-lg gap-5 flex flex-col justify-center w-fit h-fit py-3 mobileMedium:w-5/6 destkopMini:w-2/4 tabletMini:w-4/6 px-5`}
       >
         {/* label e close button container */}
         <div className="w-full h-fit flex justify-between items-center">
-          <div className="mobileMedium:text-lg">{content}</div>
+          <div className="mobileMedium:text-lg destkopMini:text-xl">{content}</div>
           <div>
-            <CloseSVG onClick={() => HandleCloseModal(handleFunction)} />
+            <CloseSVG className={`destkopMini:w-4 destkopMini:h-4`} onClick={() => HandleCloseModal(handleFunction)} />
           </div>
         </div>
         {/* input container */}

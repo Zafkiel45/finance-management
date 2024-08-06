@@ -12,6 +12,8 @@ const config: Config = {
       'mobileMini': '360px',
       'mobileMedium': '510px',
       'tabletMini': '700px',
+      'destkopMini': '1000px',
+      'desktop': '1300px',
     },
     extend: {
       backgroundImage: {

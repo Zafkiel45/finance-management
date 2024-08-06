@@ -29,7 +29,7 @@ export const BalanceButton = () => {
             <div>
             <button onClick={() => {SimpleModalContext.setStateModal5(true)}} className="border-2 flex gap-1 items-center py-1 px-2  tabletMini:px-3 tabletMini:py-2 text-xs mobileMini:text-base border-[#414141] rounded-md">
                     <div>
-                        <MinusSvg className="fill-[#212121] dark:fill-[#eee]"/>
+                        <PlusSVG className="fill-[#212121] dark:fill-[#eee]"/>
                     </div>
                     <div>
                         Adicionar gastos

@@ -65,13 +65,13 @@ export const SimulateModal = () => {
     return (
         <div className={`${simulateContext.simulateVisible ? 'flex':'hidden'} fixed top-0 left-0 w-screen h-screen backdrop-blur-sm justify-center items-center z-10`}>
             {/* overlay acima */}
-            <div className={`w-fit tabletMini:w-4/6 mobileMedium:w-5/6 h-fit p-4 flex border-2 border-gray-400 dark:border-gray-700 bg-white dark:bg-[#111111] rounded-md flex-col justify-center gap-3`}>
+            <div className={`w-fit tabletMini:w-4/6 destkopMini:w-2/4 mobileMedium:w-5/6 h-fit p-4 flex border-2 border-gray-400 dark:border-gray-700 bg-white dark:bg-[#111111] rounded-md flex-col justify-center gap-3`}>
                 <div className="w-full h-fit flex justify-between">
-                    <div className="mobileMedium:text-lg">
+                    <div className="mobileMedium:text-lg destkopMini:text-xl">
                         Simulação
                     </div>
                     <div>
-                        <CloseSVG onClick={HandleModalClose} />
+                        <CloseSVG className={`destkopMini:w-4 destkopMini:h-4`} onClick={HandleModalClose} />
                     </div>
                 </div>
                 <div className="flex flex-col gap-2">
@@ -83,12 +83,12 @@ export const SimulateModal = () => {
                     </div>
                 </div>
                 <div className={`${tableVisible ? 'block':'hidden'}`}>
-                    <table cellPadding={10} className="text-sm border w-full border-gray-400 dark:border-gray-700">
+                    <table cellPadding={10} className="text-sm tabletMini:text-base border w-full border-gray-400 dark:border-gray-700">
                         <thead>
                             <tr>
-                                <th className="p-1 border border-gray-400 dark:border-gray-700">elemento</th>
-                                <th className="p-1 border border-gray-400 dark:border-gray-700">valor</th>
-                                <th className="p-1 border border-gray-400 dark:border-gray-700">resultado</th>
+                                <th className="p-1 border border-gray-400 dark:border-gray-700 tabletMini:text-lg">elemento</th>
+                                <th className="p-1 border border-gray-400 dark:border-gray-700 tabletMini:text-lg">valor</th>
+                                <th className="p-1 border border-gray-400 dark:border-gray-700 tabletMini:text-lg">resultado</th>
                             </tr>
                         </thead>
                         <tbody>
