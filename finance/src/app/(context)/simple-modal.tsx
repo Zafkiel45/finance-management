@@ -7,10 +7,12 @@ interface SimpleModalTypes {
   stateModal2: boolean;
   stateModal3: boolean;
   stateModal4: boolean;
+  stateModal5: boolean;
   setStateModal1: Dispatch<SetStateAction<boolean>>;
   setStateModal2: Dispatch<SetStateAction<boolean>>;
   setStateModal3: Dispatch<SetStateAction<boolean>>;
   setStateModal4: Dispatch<SetStateAction<boolean>>;
+  setStateModal5: Dispatch<SetStateAction<boolean>>;
 }
 
 export const CREATE_SIMPLE_MODAL_CONTEXT =

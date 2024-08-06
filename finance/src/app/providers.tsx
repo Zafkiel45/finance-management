@@ -15,6 +15,7 @@ export const AllElements = () => {
   const [stateModal2, setStateModal2] = useState<boolean>(false);
   const [stateModal3, setStateModal3] = useState<boolean>(false);
   const [stateModal4, setStateModal4] = useState<boolean>(false);
+  const [stateModal5, setStateModal5] = useState<boolean>(false);
   // trigger context
   const [trigger, setTrigger] = useState<boolean>(false);
   // categorie context
@@ -31,10 +32,13 @@ export const AllElements = () => {
           stateModal2,
           stateModal3,
           stateModal4,
+          stateModal5,
           setStateModal1,
           setStateModal2,
           setStateModal3,
           setStateModal4,
+          setStateModal5
+
         }}
       >
         <TRIGGER_CONTEXT.Provider value={{trigger, setTrigger}}>

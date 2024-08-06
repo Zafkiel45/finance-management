@@ -18,6 +18,7 @@ interface TypeArg {
   handleFunction: Dispatch<SetStateAction<boolean>>;
   placeholder: string;
   inputType: string;
+  handleType?: string;
 }
 
 export const SimpleModal = ({
@@ -26,6 +27,7 @@ export const SimpleModal = ({
   handleFunction,
   placeholder,
   inputType,
+  handleType = '',
 }: TypeArg) => {
   let checkStateOfModal: string = state ? "flex" : "hidden";
 
@@ -59,7 +61,11 @@ export const SimpleModal = ({
 
           let OLD_VALUES = RETRIEVED_VALUE.result;
 
-          OLD_VALUES = {...OLD_VALUES, saldo: Number(inputValue)};
+          if(handleType === 'saldo') {
+            OLD_VALUES = {...OLD_VALUES, saldo: Number(inputValue)};
+          } else {
+            OLD_VALUES = {...OLD_VALUES, gastos_mes: Number(inputValue)};            
+          }
 
           const NEW_VALUE = DB_STORE.put(OLD_VALUES);
 
@@ -107,7 +113,7 @@ export const SimpleModal = ({
 
   return (
     <div
-      className={`${checkStateOfModal} w-screen h-screen flex transition-opacity backdrop-blur-sm  items-center justify-center top-0 left-0 fixed`}
+      className={`${checkStateOfModal} z-20 w-screen h-screen flex transition-opacity backdrop-blur-sm  items-center justify-center top-0 left-0 fixed`}
     >
       {/* overlay acima*/}
       {/* Modal abaixo*/}
