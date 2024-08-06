@@ -17,6 +17,7 @@ export const SimulateModal = () => {
     const [saldo, setSaldo] = useState<any>(0);
     const [gastosResult, setGastosResult] = useState<number>(0);
     const [saldoResult, setSaldoResult] = useState<number>(0);
+    const [tableVisible, setTableVisible] = useState<boolean>(false)
 
     const trigger = useContext(TRIGGER_CONTEXT)
 
@@ -41,15 +42,25 @@ export const SimulateModal = () => {
         }
 
         db_values();
-    },[trigger?.trigger])
+    },[trigger?.trigger]);
 
+    function HandleSimulate() {
+        trigger?.setTrigger(e => !e);
+        setTableVisible(() => true);
+    };
+    
     if(!simulateContext) {
         throw new Error("Ocorreu um erro com SimulateContext");
     };
+    
+    function HandleModalClose() {
+        HandleCloseModal(simulateContext?.setSimulateVisible);
+        setTableVisible(() => false);
+        setItemName('');
+        setItemValue('0');
+    };
 
-    // if(!gastos || !saldo) {
-    //     return <div>carregando dados...</div>
-    // };
+    const saldo_rest = saldoResult < 0 ? 'text-red-400':'text-yellow-400';
 
     return (
         <div className={`${simulateContext.simulateVisible ? 'flex':'hidden'} fixed top-0 left-0 w-screen h-screen backdrop-blur-sm justify-center items-center z-10`}>
@@ -60,7 +71,7 @@ export const SimulateModal = () => {
                         Simulação
                     </div>
                     <div>
-                        <CloseSVG onClick={() => HandleCloseModal(simulateContext.setSimulateVisible)} />
+                        <CloseSVG onClick={HandleModalClose} />
                     </div>
                 </div>
                 <div className="flex flex-col gap-2">
@@ -71,7 +82,7 @@ export const SimulateModal = () => {
                         <input value={itemValue} onChange={(e) => setItemValue(e.target.value)} className={`border border-gray-400 rounded-md dark:border-gray-700 px-2 py-1 placeholder:text-sm placeholder:text-gray-400 bg-white dark:bg-[#27272711]`}  type="number" placeholder="Digite o valor do item..."/>
                     </div>
                 </div>
-                <div>
+                <div className={`${tableVisible ? 'block':'hidden'}`}>
                     <table cellPadding={10} className="text-sm border w-full border-gray-400 dark:border-gray-700">
                         <thead>
                             <tr>
@@ -82,25 +93,25 @@ export const SimulateModal = () => {
                         </thead>
                         <tbody>
                             <tr>
-                                <td className="p-1 border border-gray-400 dark:border-gray-700">R$: {itemName}</td>
+                                <td className="p-1 border border-gray-400 dark:border-gray-700">{itemName}</td>
                                 <td className="p-1 border border-gray-400 dark:border-gray-700">R$: {Number(itemValue)}</td>
                                 <td className="p-1 border border-gray-400 dark:border-gray-700">---</td>
                             </tr>
                             <tr>
-                                <td className="p-1 border border-gray-400 dark:border-gray-700">R$: saldo</td>
+                                <td className="p-1 border border-gray-400 dark:border-gray-700">saldo</td>
                                 <td className="p-1 border border-gray-400 dark:border-gray-700">R$: {saldo}</td>
-                                <td className="p-1 border border-gray-400 dark:border-gray-700">R$: {saldoResult}</td>
+                                <td className={`p-1 border border-gray-400 dark:border-gray-700 ${saldo_rest}`}>R$: {saldoResult}</td>
                             </tr>
                             <tr>
-                                <td className="p-1 border border-gray-400 dark:border-gray-700">R$: gastos</td>
+                                <td className="p-1 border border-gray-400 dark:border-gray-700">gastos</td>
                                 <td className="p-1 border border-gray-400 dark:border-gray-700">R$: {gastos}</td>
-                                <td className="p-1 border border-gray-400 dark:border-gray-700">R$: {gastosResult}</td>
+                                <td className="p-1 border border-gray-400 dark:border-gray-700 text-yellow-500">R$: {gastosResult}</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div className="w-full h-fit flex justify-end">
-                    <button onClick={() => trigger?.setTrigger(e => !e)} className="bg-[#003362] text-[#eee] py-1 px-2 rounded-md text-sm border-2 border-[#205D9E]">
+                    <button onClick={HandleSimulate} className="bg-[#003362] text-[#eee] py-1 px-2 rounded-md text-sm border-2 border-[#205D9E]">
                         Simular
                     </button>
                 </div>

@@ -34,7 +34,7 @@ export const Simulate = () => {
                     <summary className="font-bold">Explicação completa</summary>
                     <p className="mt-3 text-sm"> 
                         O intuito da simulação, é para que você tenha uma noção 
-                        do quando irá gastar, e do quanto irá restar de saldo.
+                        do quanto irá gastar, e do quanto irá restar de saldo.
                         <br />
                         <br />
                         Quando clicar no botão "simular", o valor do item será

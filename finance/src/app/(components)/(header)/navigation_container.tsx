@@ -21,9 +21,6 @@ export const NavigationContainer = () => {
                 <li className="">
                     <NavigationButtons HandleOpenModal={context?.setStateModal3} content="Visão Geral" />
                 </li>
-                <li className="">
-                    <NavigationButtons content="Histórico" />
-                </li>
                 <li className="w-fit h-fit">
                     <SwitchButton/>
                 </li>
