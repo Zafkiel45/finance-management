@@ -115,10 +115,10 @@ export const CategorieItemModal = ({ index, categorieName, visible, handleClose 
     >
       {/* {Acima overlay} */}
       {/* {Abaixo modal} */}
-      <div className="w-fit mobileMedium:w-5/6 tabletMini:w-4/6 min-w-72 h-fit p-5 border-2 border-gray-300 rounded-md bg-white dark:bg-[#1a1a1a] flex flex-col gap-4">
+      <div className="w-fit mobileMedium:w-5/6 tabletMini:w-4/6 min-w-72 h-fit p-5 border-2 border-gray-300 rounded-md bg-white dark:bg-[#1a1a1a] flex flex-col desktopBig:gap-6 desktopBig:p-10 gap-4">
         {/* {Header do modal} */}
         <div className="w-full h-fit flex justify-between items-center">
-          <div className="text-lg font-bold mobileMedium:text-lg desktopMedium:text-2xl">Categoria: {categorieName}</div>
+          <div className="text-lg font-bold mobileMedium:text-lg desktopBig:text-3xl desktopMedium:text-2xl">Categoria: {categorieName}</div>
           <div className="ml-2">
             <CloseSVG
             className={`desktopMedium:w-6 desktopMedium:h-6`}
@@ -132,14 +132,14 @@ export const CategorieItemModal = ({ index, categorieName, visible, handleClose 
         </div>
         {/* Conteúdo do modal */}
         <div className="w-full h-fit">
-          <div className="desktopMedium:text-xl">total de gastos: {expensesDB}</div>
+          <div className="desktopMedium:text-xl  desktopBig:text-2xl">total de gastos: {expensesDB}</div>
         </div>
         <div>
           <input
             value={expenses}
             onChange={(e) => setExpenses(e.target.value)}
             type="text"
-            className="mobileMedium:w-full desktopMedium:py-3 desktopMedium:px-4 desktop:text-xl mobileMedium:py-2 mobileMedium:px-3  border-2 border-gray-300 rounded-md px-2 py-1 desktopMedium:placeholder:text-lg placeholder:text-sm text-gray-400"
+            className="mobileMedium:w-full desktopMedium:py-3 desktopBig:py-4 desktopBig:px-6 desktopMedium:px-4 desktop:text-xl mobileMedium:py-2 mobileMedium:px-3  border-2 border-gray-300 rounded-md px-2 py-1 desktopMedium:placeholder:text-lg placeholder:text-sm text-gray-400"
             placeholder="Adicione um valor para gastos..."
           />
         </div>
@@ -147,7 +147,7 @@ export const CategorieItemModal = ({ index, categorieName, visible, handleClose 
           <div>
             <button
               onClick={HandleAddExpenses}
-              className="bg-green-600 text-white desktopMedium:text-lg font-medium px-2 py-1 rounded-md border border-green-700"
+              className="bg-green-600 text-white desktopBig:text-xl desktopMedium:text-lg font-medium px-2 py-1 rounded-md border border-green-700"
             >
               adicionar gastos
             </button>
@@ -155,7 +155,7 @@ export const CategorieItemModal = ({ index, categorieName, visible, handleClose 
           <div>
             <button
               onClick={HandleDeleteCategorie}
-              className="bg-red-600 text-white desktopMedium:text-lg font-medium px-2 py-1 rounded-md border border-red-700"
+              className="bg-red-600 text-white desktopBig:text-xl desktopMedium:text-lg font-medium px-2 py-1 rounded-md border border-red-700"
             >
               deletar
             </button>

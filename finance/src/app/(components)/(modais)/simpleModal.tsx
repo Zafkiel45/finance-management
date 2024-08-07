@@ -118,11 +118,11 @@ export const SimpleModal = ({
       {/* overlay acima*/}
       {/* Modal abaixo*/}
       <div
-        className={`bg-white dark:bg-[#111111] border border-[#414141] shadow-sm rounded-lg gap-5 flex flex-col justify-center w-fit h-fit py-3 mobileMedium:w-5/6 destkopMini:w-2/4 desktopMedium:px-6 desktopMedium:py-5 tabletMini:w-4/6 px-5`}
+        className={`bg-white dark:bg-[#111111] border border-[#414141] shadow-sm rounded-lg gap-5 desktopBig:gap-7 flex flex-col justify-center w-fit h-fit py-3 mobileMedium:w-5/6 destkopMini:w-2/4 desktopMedium:px-6 desktopBig:p-10 desktopMedium:py-5 tabletMini:w-4/6 px-5`}
       >
         {/* label e close button container */}
         <div className="w-full h-fit flex justify-between items-center">
-          <div className="mobileMedium:text-lg desktopMedium:text-2xl destkopMini:text-xl">{content}</div>
+          <div className="mobileMedium:text-lg desktopMedium:text-2xl desktopBig:text-3xl destkopMini:text-xl">{content}</div>
           <div>
             <CloseSVG className={`destkopMini:w-4 desktopMedium:h-6  desktopMedium:w-6 destkopMini:h-4`} onClick={() => HandleCloseModal(handleFunction)} />
           </div>
@@ -139,7 +139,7 @@ export const SimpleModal = ({
         </div>
         {/* button container */}
         <div className="self-end">
-          <button onClick={HandleDetermineCall} className="bg-[#003362] text-[#eee] py-1 px-2 desktopMedium:text-lg mobileMedium:px-3 mobileMedium:py-2 rounded-md text-sm border-2 border-[#205D9E]">
+          <button onClick={HandleDetermineCall} className="bg-[#003362] text-[#eee] py-1 px-2 desktopMedium:text-lg desktopBig:text-xl mobileMedium:px-3 mobileMedium:py-2 rounded-md text-sm border-2 border-[#205D9E]">
             Confirmar
           </button>
         </div>

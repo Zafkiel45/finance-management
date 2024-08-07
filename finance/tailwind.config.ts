@@ -15,6 +15,7 @@ const config: Config = {
       'destkopMini': '1000px',
       'desktop': '1300px',
       'desktopMedium': '1600px',
+      'desktopBig': '1800px'
     },
     extend: {
       backgroundImage: {

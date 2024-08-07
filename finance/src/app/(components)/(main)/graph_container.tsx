@@ -53,7 +53,7 @@ export const GraphContainer = () => {
     const pageSize = window.innerWidth < 1300 ? 200:100;
 
     return (
-        <section className="px-2 py-7 tabletMini:px-4 destkopMini:px-6 relative w-full">
+        <section className="px-2 desktopBig:px-10 py-7 tabletMini:px-4 destkopMini:px-6 relative w-full">
             <Bar height={pageSize} role="img" aria-label="gráfico" data={{
                 labels: labels,
                 datasets: [{

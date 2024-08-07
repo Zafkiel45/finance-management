@@ -63,14 +63,14 @@ export const GeneralModal = ({
     const check = expenseCategorie.length !== 0 ? expenseCategorie[expenseCategorie.length -1].nome: '';
 
     return (
-        <div className={`${stateModal} z-20 fixed dark:bg-[#111111] overflow-auto bg-white top-0 left-0 w-screen h-screen px-4 py-5 flex justify-center items-center`}>
+        <div className={`${stateModal} z-20 fixed dark:bg-[#111111] overflow-auto bg-white top-0 left-0 w-screen h-screen desktopBig:px-10 desktopBig:py-8 px-4 py-5 flex justify-center items-center`}>
             <div className="w-full h-full flex max-h-screen flex-col gap-5">
                 <header className="w-full h-fit flex justify-between items-center">
                     <div className="font-medium">
                         Visão Geral
                     </div>
                     <div>
-                        <CloseSVG onClick={() => {
+                        <CloseSVG className={`desktopMedium:w-6 desktopMedium:h-6`} onClick={() => {
                             HandleCloseModal(handleFunction);
                             document.body.style.overflowY = 'visible';
                         }}  />
