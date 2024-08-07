@@ -17,22 +17,22 @@ export const Simulate = () => {
     };
 
     return (
-        <section className="px-2  w-full h-fit flex flex-col gap-4 justify-center">
+        <section className="px-2 desktopMedium:px-8 destkopMini:px-6  w-full h-fit flex flex-col gap-4 justify-center">
             <div className="w-full h-fit">
-                <h1 className="font-bold text-xl destkopMini:text-2xl">
+                <h1 className="font-bold text-xl desktopMedium:text-3xl destkopMini:text-2xl">
                     Simulações
                 </h1>
             </div>
             <div className="w-full h-fit">
-                <p className="text-justify tabletMini:text-lg destkopMini:text-xl">
+                <p className="text-justify tabletMini:text-lg desktopMedium:text-2xl destkopMini:text-xl">
                     Simule transações antes de efetuar a compra de algo e 
                     visualize quanto de saldo irá restar após  a transação. 
                 </p>
             </div>
             <div className="w-full h-fit">
                 <details>
-                    <summary className="font-bold destkopMini:text-xl">Explicação completa</summary>
-                    <p className="mt-3 text-sm mobileMini:text-base destkopMini:text-lg"> 
+                    <summary className="font-bold desktopMedium:text-2xl destkopMini:text-xl">Explicação completa</summary>
+                    <p className="mt-3 text-sm desktopMedium:text-xl mobileMini:text-base destkopMini:text-lg"> 
                         O intuito da simulação, é para que você tenha uma noção 
                         do quanto irá gastar, e do quanto irá restar de saldo.
                         <br />
@@ -44,7 +44,7 @@ export const Simulate = () => {
                 </details>
             </div>
             <div>
-                <button onClick={HandleOpenSimulateModal} className="bg-[#003362] text-[#eee] py-1 px-2 rounded-md tabletMini:text-base tabletMini:px-3 text-sm border-2 border-[#205D9E]" >
+                <button onClick={HandleOpenSimulateModal} className="bg-[#003362] text-[#eee] py-1 px-2 rounded-md tabletMini:text-base desktopMedium:text-lg tabletMini:px-3 text-sm border-2 border-[#205D9E]" >
                     Simular
                 </button>
             </div>

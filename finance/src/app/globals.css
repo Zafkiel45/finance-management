@@ -7,4 +7,16 @@
   margin:  0;
   box-sizing: border-box;
   outline: none;
+  scrollbar-width: thin;
+  scrollbar-color: rgb(68, 68, 68);
+  
+}
+
+::-webkit-scrollbar {
+  background-color: rgb(68, 68, 68);
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #151515;
+  border-radius: 10px;
 }

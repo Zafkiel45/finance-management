@@ -66,14 +66,14 @@ export const Categories = () => {
     };
 
     return (
-        <section className="w-full flex flex-col tabletMini:px-4 gap-5 justify-center px-2">
+        <section className="w-full flex flex-col desktopMedium:mt-10 destkopMini:px-6 desktopMedium:px-8 tabletMini:px-4 gap-5 justify-center px-2">
             <div className="w-full h-fit">
-                <h1 className="text-xl tabletMini:text-2xl font-bold">
+                <h1 className="text-xl tabletMini:text-2xl desktopMedium:text-3xl font-bold">
                     Categorias
                 </h1>
             </div>
             <div className="w-full h-fit">
-                <p className="text-base text-justify tabletMini:text-lg destkopMini:text-xl destkopMini:leading-7">
+                <p className="text-base text-justify tabletMini:text-lg desktopMedium:text-2xl destkopMini:text-xl desktopMedium:leading-10 destkopMini:leading-7">
                     Está é a área de categorias. Aqui você pode separar seus 
                     gastos com base nelas. Por exemplo, crie uma categoria 
                     para “entretenimento” e registre a quantidade de gastos 
@@ -82,14 +82,14 @@ export const Categories = () => {
                 </p>
             </div>
             <div className="w-full h-fit">
-                <button onClick={() => HandleOpenModal()} className="bg-[#003362] flex gap-2 tabletMini:px-3 tabletMini:py-2 items-center py-1 px-2 rounded-md text-sm destkopMini:text-base border-2 border-[#205D9E]">
+                <button onClick={() => HandleOpenModal()} className="bg-[#003362] flex gap-2 tabletMini:px-3 tabletMini:py-2 desktopMedium:text-lg items-center py-1 px-2 rounded-md text-sm destkopMini:text-base border-2 border-[#205D9E]">
                     <div>
                         <p className="text-[#eee]">
                             Criar categoria
                         </p>
                     </div>
                     <div>
-                        <PlusSVG className="fill-[#eee] tabletMini:w-5 tabletMini:h-5" />
+                        <PlusSVG className="fill-[#eee] tabletMini:w-5 desktopMedium:w-6 desktopMedium:h-6 tabletMini:h-5" />
                     </div>
                 </button>
             </div>
@@ -105,7 +105,7 @@ export const Categories = () => {
                         if(count_categorie <= 3) {
                             return <div key={index * 2}
                                 onClick={() => HandleOpenItemModal(index, item.nome)}
-                                className="w-full text-[#212121] border-2 cursor-pointer dark:border-gray-600 border-gray-400 dark:text-[#eeee] h-fit p-3 rounded-lg bg-gray-200 dark:bg-[#1a1a1a] destkopMini:text-lg destkopMini:p-4">
+                                className="w-full text-[#212121] border-2 cursor-pointer dark:border-gray-600 border-gray-400 dark:text-[#eeee] h-fit p-3 rounded-lg bg-gray-200 dark:bg-[#1a1a1a] desktopMedium:text-xl desktopMedium:p-6 destkopMini:text-lg destkopMini:p-4">
                                 {item.nome}
                             </div>
                         }
@@ -119,7 +119,7 @@ export const Categories = () => {
                )}
             </div>
             <div className="mt-5 w-full h-fit flex justify-center items-center">
-                <button onClick={() => CATEGORIE_MODAL_CONTEXT.setActiveCategorieModal(true)} className="bg-[#003362] text-[#eee] py-1 px-2 rounded-md text-sm tabletMini:text-base tabletMini:px-3 border-2 border-[#205D9E]" >
+                <button onClick={() => CATEGORIE_MODAL_CONTEXT.setActiveCategorieModal(true)} className="bg-[#003362] text-[#eee] py-1 px-2 rounded-md text-sm tabletMini:text-base desktopMedium:text-lg tabletMini:px-3 border-2 border-[#205D9E]" >
                     Ver mais
                 </button>
             </div>

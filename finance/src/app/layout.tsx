@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <body className={`${inter.className} transition-all dark:text-[#eeeeee] w-screen min-h-screen dark:bg-[#111111]`}>
+      <body className={`${inter.className} transition-all overflow-x-hidden dark:text-[#eeeeee] w-screen min-h-screen dark:bg-[#111111]`}>
         {children}
       </body>
     </html>

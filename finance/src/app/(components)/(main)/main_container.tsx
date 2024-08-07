@@ -21,10 +21,10 @@ export const MainContainer = () => {
     }
 
     return (
-            <main className="flex flex-col gap-7 tabletMini:gap-5 w-full h-fit  tabletMini:px-4 my-5 px-2">
+            <main className="flex flex-col gap-7 desktopMedium:px-8  destkopMini:px-6 tabletMini:gap-5 w-full h-fit  tabletMini:px-4 my-5 px-2">
                 <MainTitle/>
                 <BalanceButton/>
-                <section className="w-full flex flex-col tabletMini:flex-row gap-3 h-fit">
+                <section className="w-full destkopMini:px-6 desktopMedium:px-8 flex flex-col tabletMini:flex-row gap-3 h-fit">
                     <Cards content="Saldo" value={DB_VALUES.saldo} />
                     <Cards content="Gastos do mês" value={DB_VALUES.gastos_mes} />
                 </section>

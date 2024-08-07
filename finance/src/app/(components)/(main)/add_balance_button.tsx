@@ -15,11 +15,11 @@ export const BalanceButton = () => {
     };
 
     return (
-        <section className="w-full h-fit flex gap-2">
+        <section className="w-full h-fit destkopMini:px-6  desktopMedium:px-8 flex gap-2">
             <div>    
-                <button onClick={() => {SimpleModalContext.setStateModal1(true)}} className="border-2 flex gap-1 items-center py-1 px-2 tabletMini:px-3 tabletMini:py-2  text-xs mobileMini:text-base border-[#414141] rounded-md">
+                <button onClick={() => {SimpleModalContext.setStateModal1(true)}} className="border-2 flex gap-1 items-center py-1 px-2 tabletMini:px-3 tabletMini:py-2 desktopMedium:px-4 desktopMedium:py-3 desktopMedium:text-lg text-xs mobileMini:text-base border-[#414141] rounded-md">
                     <div>
-                        <PlusSVG className="fill-[#212121] dark:fill-[#eee]"/>
+                        <PlusSVG className="fill-[#212121] desktopMedium:w-5 desktopMedium:h-5 dark:fill-[#eee]"/>
                     </div>
                     <div>
                         Adicionar saldo
@@ -27,9 +27,9 @@ export const BalanceButton = () => {
                 </button>
             </div>
             <div>
-            <button onClick={() => {SimpleModalContext.setStateModal5(true)}} className="border-2 flex gap-1 items-center py-1 px-2  tabletMini:px-3 tabletMini:py-2 text-xs mobileMini:text-base border-[#414141] rounded-md">
+            <button onClick={() => {SimpleModalContext.setStateModal5(true)}} className="border-2 flex gap-1 items-center py-1 px-2  tabletMini:px-3 tabletMini:py-2 desktopMedium:px-4 desktopMedium:py-3 text-xs desktopMedium:text-lg  mobileMini:text-base border-[#414141] rounded-md">
                     <div>
-                        <PlusSVG className="fill-[#212121] dark:fill-[#eee]"/>
+                        <PlusSVG className="fill-[#212121] desktopMedium:w-5 desktopMedium:h-5 dark:fill-[#eee]"/>
                     </div>
                     <div>
                         Adicionar gastos

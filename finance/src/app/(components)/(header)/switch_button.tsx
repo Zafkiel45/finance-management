@@ -49,9 +49,9 @@ export const SwitchButton = () => {
     return (
         <button onClick={HandleSwitchMode} className="border group border-[#414141] p-2 rounded-md hover:bg-gray-700 transition-all">
             {theme === 'dark' ? 
-                <MoonSVG className="fill-[#eeeeee] mobileMini:h-5 mobileMini:w-5" />
+                <MoonSVG className="fill-[#eeeeee] mobileMini:h-5 desktopMedium:h-7 desktopMedium:w-7 mobileMini:w-5" />
                 :
-                <SunSVG className="fill-[#414141] mobileMini:h-5 mobileMini:w-5 group-hover:fill-[#eeeeee]"/>
+                <SunSVG className="fill-[#414141] mobileMini:h-5 desktopMedium:h-7 desktopMedium:w-7 mobileMini:w-5 group-hover:fill-[#eeeeee]"/>
             }
         </button>
     )

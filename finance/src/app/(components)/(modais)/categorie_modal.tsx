@@ -69,10 +69,10 @@ export const CategorieModal = () => {
       {/* {abaixo modal } */}
       <div className="w-full h-full flex flex-col gap-4 p-3 destkopMini:p-5">
         <div className="flex justify-between items-center">
-          <div className="mobileMini:text-lg destkopMini:text-xl">Todas as categorias</div>
+          <div className="mobileMini:text-lg destkopMini:text-xl desktopMedium:text-2xl ">Todas as categorias</div>
           <div>
             <CloseSVG
-              className={`destkopMini:w-4 destkopMini:h-4`}
+              className={`destkopMini:w-4 desktopMedium:w-6 desktopMedium:h-6 destkopMini:h-4`}
               onClick={() =>
                 HandleCloseModal(CATEGORIE_MODAL_CONTEXT.setActiveCategorieModal)
               }
@@ -85,7 +85,7 @@ export const CategorieModal = () => {
               <>
                 {categories.map((item: any, index: number) => {
                   return (
-                    <div onClick={() => HandleOpenItemModal({index: index, name: item.nome})} className="w-full text-[#212121] border-2 cursor-pointer dark:border-gray-600 border-gray-400 dark:text-[#eeee] h-fit p-3 destkopMini:p-4 destkopMini:text-lg rounded-lg bg-gray-200 dark:bg-[#1a1a1a]" key={index * 2}>
+                    <div onClick={() => HandleOpenItemModal({index: index, name: item.nome})} className="w-full text-[#212121] border-2 cursor-pointer dark:border-gray-600 border-gray-400 dark:text-[#eeee] h-fit p-3 destkopMini:p-4 desktopMedium:p-6 desktopMedium:text-xl destkopMini:text-lg rounded-lg bg-gray-200 dark:bg-[#1a1a1a]" key={index * 2}>
                       {item.nome}
                     </div>
                   );
