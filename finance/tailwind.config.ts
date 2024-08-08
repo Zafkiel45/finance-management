@@ -23,6 +23,16 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      keyframes: {
+        fade: {
+          'o%': {opacity: '0'},
+          '50%': {opacity: '0.5'},
+          '100%': {opacity: '1'}
+        },
+      },
+      animation: {
+        fade: 'fade 0.2s ease-in forwards',
+      }
     },
   },
   plugins: [],

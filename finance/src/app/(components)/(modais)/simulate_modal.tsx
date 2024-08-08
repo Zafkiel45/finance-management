@@ -63,7 +63,7 @@ export const SimulateModal = () => {
     const saldo_rest = saldoResult < 0 ? 'text-red-400':'text-yellow-400';
 
     return (
-        <div className={`${simulateContext.simulateVisible ? 'flex':'hidden'} fixed top-0 left-0 w-screen h-screen backdrop-blur-sm justify-center items-center z-10`}>
+        <div className={`${simulateContext.simulateVisible ? 'flex':'hidden'} animate-fade opacity-0 fixed top-0 left-0 w-screen h-screen backdrop-blur-sm justify-center items-center z-10`}>
             {/* overlay acima */}
             <div className={`w-fit tabletMini:w-4/6 destkopMini:w-2/4 mobileMedium:w-5/6 h-fit p-4 desktopBig:p-10 desktopMedium:p-6 flex border-2 border-gray-400 dark:border-gray-700 bg-white dark:bg-[#111111] rounded-md flex-col justify-center desktopMedium:gap-5 gap-3`}>
                 <div className="w-full h-fit flex justify-between">
@@ -71,7 +71,7 @@ export const SimulateModal = () => {
                         Simulação
                     </div>
                     <div>
-                        <CloseSVG className={`destkopMini:w-4 desktopMedium:w-6 desktopMedium:h-6 destkopMini:h-4`} onClick={HandleModalClose} />
+                        <CloseSVG className={`destkopMini:w-4 cursor-pointer  desktopMedium:w-6 desktopMedium:h-6 destkopMini:h-4`} onClick={HandleModalClose} />
                     </div>
                 </div>
                 <div className="flex flex-col desktopBig:gap-4 gap-2">

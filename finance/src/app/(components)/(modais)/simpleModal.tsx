@@ -113,7 +113,7 @@ export const SimpleModal = ({
 
   return (
     <div
-      className={`${checkStateOfModal} z-20 w-screen h-screen flex transition-opacity backdrop-blur-sm  items-center justify-center top-0 left-0 fixed`}
+      className={`${checkStateOfModal} animate-fade opacity-0 z-20 w-screen h-screen flex transition-opacity backdrop-blur-sm  items-center justify-center top-0 left-0 fixed`}
     >
       {/* overlay acima*/}
       {/* Modal abaixo*/}
@@ -124,7 +124,7 @@ export const SimpleModal = ({
         <div className="w-full h-fit flex justify-between items-center">
           <div className="mobileMedium:text-lg desktopMedium:text-2xl desktopBig:text-3xl destkopMini:text-xl">{content}</div>
           <div>
-            <CloseSVG className={`destkopMini:w-4 desktopMedium:h-6  desktopMedium:w-6 destkopMini:h-4`} onClick={() => HandleCloseModal(handleFunction)} />
+            <CloseSVG className={`destkopMini:w-4 desktopMedium:h-6 cursor-pointer  desktopMedium:w-6 destkopMini:h-4`} onClick={() => HandleCloseModal(handleFunction)} />
           </div>
         </div>
         {/* input container */}

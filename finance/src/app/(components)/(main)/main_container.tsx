@@ -15,8 +15,9 @@ export const MainContainer = () => {
     const DB_VALUES = useRetrieveDB({storeName: 'finances', id: 1});
 
     if(!DB_VALUES) {
-        return <div className="w-screen h-screen flex justify-center items-center">
-            Loading...
+        return <div className="w-screen destkopMini:text-xl dark:text-white h-screen flex justify-center items-center">
+            <div className="rounded-full border-b-2 border-gray-950 dark:border-white animate-spin destkopMini:h-5 destkopMini:w-5"></div>
+            <div>Loading...</div>
         </div>
     }
 

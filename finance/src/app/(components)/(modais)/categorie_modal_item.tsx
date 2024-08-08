@@ -109,7 +109,7 @@ export const CategorieItemModal = ({ index, categorieName, visible, handleClose 
 
   return (
     <div
-      className={`fixed top-0 w-screen h-screen backdrop-blur-sm left-0 justify-center items-center ${
+      className={`fixed top-0 w-screen h-screen animate-fade opacity-0 backdrop-blur-sm left-0 justify-center items-center ${
         visible ? "flex" : "hidden"
       } `}
     >
@@ -121,7 +121,7 @@ export const CategorieItemModal = ({ index, categorieName, visible, handleClose 
           <div className="text-lg font-bold mobileMedium:text-lg desktopBig:text-3xl desktopMedium:text-2xl">Categoria: {categorieName}</div>
           <div className="ml-2">
             <CloseSVG
-            className={`desktopMedium:w-6 desktopMedium:h-6`}
+            className={`desktopMedium:w-6 cursor-pointer  desktopMedium:h-6`}
               onClick={() =>
                 HandleCloseModal(
                   handleClose

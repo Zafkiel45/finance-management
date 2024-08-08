@@ -72,7 +72,7 @@ export const CategorieModal = () => {
           <div className="mobileMini:text-lg destkopMini:text-xl desktopMedium:text-2xl desktopBig:text-3xl ">Todas as categorias</div>
           <div>
             <CloseSVG
-              className={`destkopMini:w-4 desktopMedium:w-6 desktopMedium:h-6 destkopMini:h-4`}
+              className={`destkopMini:w-4 cursor-pointer  desktopMedium:w-6 desktopMedium:h-6 destkopMini:h-4`}
               onClick={() =>
                 HandleCloseModal(CATEGORIE_MODAL_CONTEXT.setActiveCategorieModal)
               }

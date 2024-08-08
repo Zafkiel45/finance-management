@@ -12,7 +12,7 @@ export const NavigationButtons = ({
     };
 
     return (
-        <button onClick={() => HandleModalOpen()} className="w-fit h-fit font-medium">
+        <button onClick={() => HandleModalOpen()} className="w-fit h-fit destkopMini:hover:scale-105 destkopMini:transition-transform font-medium">
             {content}
         </button>
     )

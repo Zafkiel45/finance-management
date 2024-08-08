@@ -70,7 +70,7 @@ export const GeneralModal = ({
                         Visão Geral
                     </div>
                     <div>
-                        <CloseSVG className={`desktopMedium:w-6 desktopMedium:h-6`} onClick={() => {
+                        <CloseSVG className={`desktopMedium:w-6 cursor-pointer  desktopMedium:h-6`} onClick={() => {
                             HandleCloseModal(handleFunction);
                             document.body.style.overflowY = 'visible';
                         }}  />
